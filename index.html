@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestão de Alunos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="app">
+        <header class="topbar">
+          <h1>🎓 Gestão de Alunos</h1>
+          <span class="badge">Sistema acadêmico</span>
+        </header>
+
+        <main class="content">
+          <section class="summary">
+            <div class="stat">
+              <span class="label">Total</span>
+              <span class="value" id="totalAlunos">0</span>
+            </div>
+            <div class="stat">
+              <span class="label">Média de idade</span>
+              <span class="value" id="mediaIdade">0</span>
+            </div>
+            <div class="stat">
+              <span class="label">Cursos</span>
+              <span class="value" id="totalCursos">0</span>
+            </div>
+          </section>
+
+          <div class="grid">
+            <section class="card">
+              <h2>Adicionar aluno</h2>
+              <form id="formAluno">
+                <div class="form-group">
+                  <label for="nome">Nome</label>
+                  <input id="nome" name="nome" type="text" placeholder="Digite o nome do aluno" required />
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="idade">Idade</label>
+                    <input id="idade" name="idade" type="number" min="0" max="120" placeholder="18" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="curso">Curso</label>
+                    <input id="curso" name="curso" type="text" placeholder="Ex.: Engenharia" required />
+                  </div>
+                </div>
+
+                <div class="btn-row">
+                  <button type="submit" class="btn btn-primary">Salvar aluno</button>
+                  <button type="reset" class="btn btn-secondary">Limpar</button>
+                </div>
+              </form>
+            </section>
+
+            <section class="card">
+              <h2>Resumo</h2>
+              <p>O sistema permite cadastrar estudantes, visualizar os dados em tabela e excluir registros quando necessário.</p>
+              <div id="status" class="status status-success" aria-live="polite">Pronto para uso.</div>
+            </section>
+          </div>
+
+          <section class="card" style="margin-top: 24px;">
+            <h2>Lista de alunos</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Curso</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody id="listaAlunos">
+                  <tr>
+                    <td colspan="5">Nenhum aluno cadastrado.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+
+        <footer class="footer">Dashboard acadêmico com cadastro e exclusão</footer>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
